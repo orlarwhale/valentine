@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Valentine</title>
+  <style>
+    /* Overall page background */
+    body {
+      background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+      font-family: 'Georgia', serif;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
+
+    /* Full-screen overlay for the reaction page */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+
+    /* Reaction container styling */
+    .reaction-container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      width: 80%;
+    }
+
+    .reaction-container h1 {
+      color: #d63384;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    /* Reaction buttons styling */
+    .button-group {
+      margin-top: 20px;
+    }
+
+    .reaction-btn {
+      background: #ff5e78;
+      color: white;
+      font-size: 24px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .reaction-btn:hover {
+      background: #ff1e56;
+      transform: scale(1.1);
+    }
+
+    /* Common container for both the love letter and the sad page */
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      margin: 50px auto;
+      border: 4px solid #ff5e78;
+      display: none; /* Initially hidden */
+    }
+
+    h1 {
+      color: #d63384;
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    /* Animated emphasis for a highlighted phrase in the love letter */
+    .question {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ff1e56;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        color: #ff1e56;
+      }
+      100% {
+        transform: scale(1.1);
+        color: #d63384;
+      }
+    }
+
+    .signature {
+      margin-top: 20px;
+      font-style: italic;
+      font-size: 22px;
+      color: #d63384;
+    }
+
+    /* Styling for the sad page text */
+    .sad-text {
+      font-size: 24px;
+      color: #d63384;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Reaction Overlay: First page with YES and NO buttons -->
+  <div class="overlay" id="overlay">
+    <div class="reaction-container">
+      <h1>WILL YOU BE MY VALENTINE?</h1>
+      <div class="button-group">
+        <button class="reaction-btn" onclick="showLoveLetter()">YES</button>
+        <button class="reaction-btn" onclick="showSadPage()">NO</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Love Letter Page for YES -->
+  <div class="container" id="loveLetter">
+    <h1>My dearest Oluwanifemi,</h1>
+    <p>
+     Your "yes," has made my heart overflowed with joy and gratitude. In that moment, I knew that every beat of my heart was destined to dance just for you.
+      Your acceptance has filled my world with light and love, and I find myself eagerly dreaming of all the beautiful moments we'll share—from quiet whispers under the stars to laughter-filled adventures during the day.
+    </p>
+    <p>
+      Thank you for opening your heart to this journey with me. I cherish every second of our togetherness and look forward to creating a future painted with all the colors of love, hope, and endless happiness.
+    </p>
+    <p class="signature">Forever yours, <br> Olawale</p>
+  </div>
+
+  <!-- Sad Page for NO -->
+  <div class="container" id="sadPage">
+    <h1>😢</h1>
+    <p class="sad-text">GO BACK AND CLICK YES</p>
+  </div>
+
+  <!-- JavaScript to toggle pages with feedback -->
+  <script>
+    function showLoveLetter() {
+      alert("You clicked YES! Thank you for accepting my love.");
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("loveLetter").style.display = "block";
+    }
+
+    function showSadPage() {
+      alert("You clicked NO. Hope love finds you soon.");
+      document.getElementById("overlay").style.display = "none";
+      document.getElementById("sadPage").style.display = "block";
+    }
+  </script>
+</body>
+</html>
